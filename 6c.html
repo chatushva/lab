@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Input Methods</title>
+</head>
+<body>
+
+    <h2>JavaScript Input Methods</h2>
+
+    <button onclick="getPromptInput()">Prompt Input</button>
+    <button onclick="getTextBoxInput()">Textbox Input</button>
+    <button onclick="getConfirmInput()">Confirm Input</button>
+    <button onclick="getConsoleInput()">Console Input</button>
+
+    <br><br>
+    <input type="text" id="userInput" placeholder="Type something and click submit">
+    <button onclick="updateInnerHTML()">Submit</button>
+
+    <div id="output-area">Output will appear here.</div>
+
+    <script>
+        // Method 1: Get input from a prompt
+        function getPromptInput() {
+            let input = prompt("Enter some text:");
+            if (input !== null) {
+                document.getElementById("output-area").innerHTML = "Prompt Input: " + input;
+            }
+        }
+
+        // Method 2: Get input from a text box
+        function getTextBoxInput() {
+            let input = document.getElementById("userInput").value;
+            document.getElementById("output-area").innerHTML = "Textbox Input: " + input;
+        }
+
+        // Method 3: Get input using confirm (Yes/No)
+        function getConfirmInput() {
+            let result = confirm("Do you agree?");
+            document.getElementById("output-area").innerHTML = "Confirm Result: " + (result ? "Yes" : "No");
+        }
+
+        // Method 4: Get input from console
+        function getConsoleInput() {
+            let input = prompt("Enter a message to log in console:");
+            console.log("Console Input: " + input);
+        }
+
+        // Method 5: Update Inner HTML
+        function updateInnerHTML() {
+            let input = document.getElementById("userInput").value;
+            document.getElementById("output-area").innerHTML = "Updated Input: " + input;
+        }
+    </script>
+
+</body>
+</html>
